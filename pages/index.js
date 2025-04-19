@@ -6,7 +6,7 @@ import styles from "@/styles/Home.module.css";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
-});1
+});
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
