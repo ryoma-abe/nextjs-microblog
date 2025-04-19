@@ -3,7 +3,7 @@ import Image from "next/image";
 const name = "RyoCode";
 export const siteTitle = "Next Blog";
 
-export const Layout = () => {
+export const Layout = ({ children }) => {
   return (
     <>
       <Head>
@@ -14,6 +14,7 @@ export const Layout = () => {
         <Image src="/images/ryocode.png" width={100} height={100} />
       </header>
       <h1>{name}</h1>
+      <main>{children}</main>
     </>
   );
 };
