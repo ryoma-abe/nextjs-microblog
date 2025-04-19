@@ -11,8 +11,13 @@ export const Layout = ({ children }) => {
         <title>{siteTitle}</title>
         <link rel="icon" href="favicon.ico" type="image/x-icon" />
       </Head>
-      <header>
-        <Image src="/images/ryocode.png" width={100} height={100} />
+      <header className="header">
+        <Image
+          className="headerImage"
+          src="/images/ryocode.png"
+          width={100}
+          height={100}
+        />
       </header>
       <h1>{name}</h1>
       <main>{children}</main>
