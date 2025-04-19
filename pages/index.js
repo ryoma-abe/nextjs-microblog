@@ -1,7 +1,6 @@
 import Head from "next/head";
-import Image from "next/image";
 import Link from "next/link";
-
+import { Layout } from "../components/Layout";
 export default function Home() {
   return (
     <>
@@ -11,10 +10,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Link href="./posts/firstPost">firstPost</Link>
-      <div>
-        <Image src="/ryocode.png" alt="コアラ" width={100} height={100} />
-      </div>
+      <Layout />
     </>
   );
 }
