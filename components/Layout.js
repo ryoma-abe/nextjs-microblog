@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import styles from "./layout.module.css";
 const name = "RyoCode";
 export const siteTitle = "Next Blog";
 
