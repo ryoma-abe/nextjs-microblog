@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
@@ -11,6 +12,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Link href="./posts/firstPost">firstPost</Link>
+      <div>
+        <Image src="/ryocode.png" alt="コアラ" width={100} height={100} />
+      </div>
     </>
   );
 }
