@@ -6,7 +6,7 @@ export const siteTitle = "Next Blog";
 
 export const Layout = ({ children }) => {
   return (
-    <>
+    <div className={styles.container}>
       <Head>
         <title>{siteTitle}</title>
         <link rel="icon" href="favicon.ico" type="image/x-icon" />
@@ -16,6 +16,6 @@ export const Layout = ({ children }) => {
       </header>
       <h1>{name}</h1>
       <main>{children}</main>
-    </>
+    </div>
   );
 };
