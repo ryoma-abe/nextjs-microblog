@@ -25,6 +25,45 @@ export default function Home() {
             <br />
             <small className={utils.lightText}>2024/11/16</small>
           </article>
+          <article>
+            <Link href="#">
+              <img
+                src="/images/thumbnail01.jpg"
+                className={styles.thumbnailImage}
+              />
+            </Link>
+            <Link href="#" className={utils.boldText}>
+              ブログタイトル1
+            </Link>
+            <br />
+            <small className={utils.lightText}>2024/11/16</small>
+          </article>
+          <article>
+            <Link href="#">
+              <img
+                src="/images/thumbnail01.jpg"
+                className={styles.thumbnailImage}
+              />
+            </Link>
+            <Link href="#" className={utils.boldText}>
+              ブログタイトル1
+            </Link>
+            <br />
+            <small className={utils.lightText}>2024/11/16</small>
+          </article>
+          <article>
+            <Link href="#">
+              <img
+                src="/images/thumbnail01.jpg"
+                className={styles.thumbnailImage}
+              />
+            </Link>
+            <Link href="#" className={utils.boldText}>
+              ブログタイトル1
+            </Link>
+            <br />
+            <small className={utils.lightText}>2024/11/16</small>
+          </article>
         </div>
       </section>
     </Layout>
