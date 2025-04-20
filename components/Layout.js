@@ -19,8 +19,8 @@ export const Layout = ({ children }) => {
           width={100}
           height={100}
         />
+        <h1>{name}</h1>
       </header>
-      <h1>{name}</h1>
       <main>{children}</main>
     </div>
   );
