@@ -13,6 +13,9 @@ export default function Home() {
           <Link href="#">
             <img src="/images/thumbnail01.jpg" />
           </Link>
+          <Link href="#">ブログタイトル1</Link>
+          <br />
+          <small>2024/11/16</small>
         </article>
       </div>
     </Layout>
