@@ -14,35 +14,55 @@ export default function Home() {
         <div className={styles.grid}>
           <article>
             <Link href="#">
-              <img src="/images/thumbnail01.jpg" />
+              <img
+                src="/images/thumbnail01.jpg"
+                className={styles.thumbnailImage}
+              />
             </Link>
-            <Link href="#">ブログタイトル1</Link>
+            <Link href="#" className={utils.boldText}>
+              ブログタイトル1
+            </Link>
             <br />
-            <small>2024/11/16</small>
+            <small className={utils.lightText}>2024/11/16</small>
           </article>
           <article>
             <Link href="#">
-              <img src="/images/thumbnail01.jpg" />
+              <img
+                src="/images/thumbnail01.jpg"
+                className={styles.thumbnailImage}
+              />
             </Link>
-            <Link href="#">ブログタイトル1</Link>
+            <Link href="#" className={utils.boldText}>
+              ブログタイトル1
+            </Link>
             <br />
-            <small>2024/11/16</small>
+            <small className={utils.lightText}>2024/11/16</small>
           </article>
           <article>
             <Link href="#">
-              <img src="/images/thumbnail01.jpg" />
+              <img
+                src="/images/thumbnail01.jpg"
+                className={styles.thumbnailImage}
+              />
             </Link>
-            <Link href="#">ブログタイトル1</Link>
+            <Link href="#" className={utils.boldText}>
+              ブログタイトル1
+            </Link>
             <br />
-            <small>2024/11/16</small>
+            <small className={utils.lightText}>2024/11/16</small>
           </article>
           <article>
             <Link href="#">
-              <img src="/images/thumbnail01.jpg" />
+              <img
+                src="/images/thumbnail01.jpg"
+                className={styles.thumbnailImage}
+              />
             </Link>
-            <Link href="#">ブログタイトル1</Link>
+            <Link href="#" className={utils.boldText}>
+              ブログタイトル1
+            </Link>
             <br />
-            <small>2024/11/16</small>
+            <small className={utils.lightText}>2024/11/16</small>
           </article>
         </div>
       </section>
