@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "./layout.module.css";
+import utils from "../styles/utils.module.css";
 const name = "RyoCode";
 export const siteTitle = "Next Blog";
 
@@ -12,9 +13,14 @@ export const Layout = ({ children }) => {
         <link rel="icon" href="favicon.ico" type="image/x-icon" />
       </Head>
       <header className={styles.header}>
-        <Image src="/images/ryocode.png" width={100} height={100} />
+        <Image
+          className={utils.borderCircle}
+          src="/images/profile.jpg"
+          width={100}
+          height={100}
+        />
+        <h1>{name}</h1>
       </header>
-      <h1>{name}</h1>
       <main>{children}</main>
     </div>
   );
