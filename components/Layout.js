@@ -19,7 +19,7 @@ export const Layout = ({ children }) => {
           width={100}
           height={100}
         />
-        <h1>{name}</h1>
+        <h1 className={utils.heading2Xl}>{name}</h1>
       </header>
       <main>{children}</main>
     </div>
