@@ -7,7 +7,6 @@ import { getPostData } from "@/lib/post";
 // SSGの場合
 export async function getStaticProps() {
   const allPostsData = getPostData();
-  console.log(allPostsData);
   return {
     props: {
       allPostsData,
@@ -23,58 +22,18 @@ export default function Home({ allPostsData }) {
       <section>
         <h2>📝エンジニアのブログ</h2>
         <div className={styles.grid}>
-          <article>
-            <Link href="#">
-              <img
-                src="/images/thumbnail01.jpg"
-                className={styles.thumbnailImage}
-              />
-            </Link>
-            <Link href="#" className={utils.boldText}>
-              ブログタイトル1
-            </Link>
-            <br />
-            <small className={utils.lightText}>2024/11/16</small>
-          </article>
-          <article>
-            <Link href="#">
-              <img
-                src="/images/thumbnail01.jpg"
-                className={styles.thumbnailImage}
-              />
-            </Link>
-            <Link href="#" className={utils.boldText}>
-              ブログタイトル1
-            </Link>
-            <br />
-            <small className={utils.lightText}>2024/11/16</small>
-          </article>
-          <article>
-            <Link href="#">
-              <img
-                src="/images/thumbnail01.jpg"
-                className={styles.thumbnailImage}
-              />
-            </Link>
-            <Link href="#" className={utils.boldText}>
-              ブログタイトル1
-            </Link>
-            <br />
-            <small className={utils.lightText}>2024/11/16</small>
-          </article>
-          <article>
-            <Link href="#">
-              <img
-                src="/images/thumbnail01.jpg"
-                className={styles.thumbnailImage}
-              />
-            </Link>
-            <Link href="#" className={utils.boldText}>
-              ブログタイトル1
-            </Link>
-            <br />
-            <small className={utils.lightText}>2024/11/16</small>
-          </article>
+          {allPostsData.map(({ id, title, date, thumbnail }) => (
+            <article key={id}>
+              <Link href={`/posts/${id}`}>
+                <img src={thumbnail} className={styles.thumbnailImage} />
+              </Link>
+              <Link href="#" className={utils.boldText}>
+                {title}
+              </Link>
+              <br />
+              <small className={utils.lightText}>{date}</small>
+            </article>
+          ))}
         </div>
       </section>
     </Layout>
