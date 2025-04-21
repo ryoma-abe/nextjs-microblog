@@ -27,7 +27,7 @@ export default function Home({ allPostsData }) {
               <Link href={`/posts/${id}`}>
                 <img src={thumbnail} className={styles.thumbnailImage} />
               </Link>
-              <Link href="#" className={utils.boldText}>
+              <Link href={`/posts/${id}`} className={utils.boldText}>
                 {title}
               </Link>
               <br />
