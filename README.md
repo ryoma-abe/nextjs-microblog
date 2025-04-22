@@ -1,19 +1,95 @@
-\_app.js はグローバルのスタイルを当てるためにつかう
-Link コンポーネントの中に a タグを配置するのは NG になった
+---
 
-## postsDirectory
+````md
+---
 
-- `process.cwd()` はプロジェクトのルートフォルダを指す。
-- `path.join()` でその中の "posts" フォルダの場所を作る。
-- つまり、`postsDirectory` は "posts" フォルダの絶対パスになる。
+title: "Next.js で学んだ静的ブログ構築の基礎知識まとめ"
+date: "2025-04-23"
+tags: ["Next.js", "ブログ", "Markdown", "SSG"]
 
-- `getPostData` は、posts フォルダの中のファイル一覧を取得する関数。
-- `fs.readdirSync()` は指定フォルダ内のファイル名（文字列）の配列を返す。
-- つまり、`fileNames` には ["post1.md", "post2.md", ...] のような配列が入る。
+---
 
-- `replace(/\.md$/, "")` は、`.md` で終わる文字列から `.md` を削除する処理。
-- `/.../` は正規表現リテラルの囲い（文字列ではなくパターンとして扱う）。
-- `\.` は「ドット」という文字そのものを意味する（正規表現では `.` は任意の 1 文字）。
-- `$` は「文字列の終わり」を意味し、`.md` が末尾にあるときだけマッチする。
+## \_app.js と Link の注意点
 
+- `\_app.js` は、**グローバルなスタイルや共通レイアウト**を適用したいときに使う。
+- `Link` コンポーネントに `a` タグを **ネストするのは非推奨**。Next.js 13 以降では、`<Link href="/about">About</Link>` のように使うのが正解。
 
+---
+
+## postsDirectory とは何か？
+
+- `process.cwd()` は、**プロジェクトのルートディレクトリ**を返す。
+- `path.join(process.cwd(), "posts")` によって、**posts フォルダの絶対パス**を生成。
+- つまり、`postsDirectory` は Markdown ファイルを格納するベースフォルダのこと。
+
+---
+
+## getPostData の仕組み
+
+```js
+const fileNames = fs.readdirSync(postsDirectory);
+```
+
+````
+
+- `fs.readdirSync()` は、指定ディレクトリ内の **ファイル名（文字列）配列**を返す。
+- 返り値例：`["hello.md", "next.md"]`
+
+```js
+const id = fileName.replace(/\.md$/, "");
+```
+
+- `.md` を取り除いて `id` にするための処理。
+- `/\.md$/` の正規表現：
+  - `\.` は **ドット文字そのもの**
+  - `$` は **文字列の終わり**
+  - → つまり「.md で終わる文字列だけ」にマッチする。
+
+---
+
+## path.join とファイルパス
+
+```js
+const fullPath = path.join(postsDirectory, fileName);
+```
+
+- ディレクトリとファイル名を結合して、**絶対パス（例：`/Users/ryoma/blog/posts/hello.md`）**を生成。
+
+---
+
+## gray-matter でフロントマターを取得
+
+```js
+const matterResult = matter(fileContents);
+```
+
+- Markdown ファイルから、**メタデータ（YAML）と本文**を分離。
+- `matterResult.data`：フロントマター
+- `matterResult.content`：Markdown 本文
+
+---
+
+## fallback: false の意味
+
+```js
+export async function getStaticPaths() {
+  return {
+    paths: [...],
+    fallback: false,
+  };
+}
+```
+
+- `fallback: false` は、**事前ビルドしたページのみアクセス可能にする**設定。
+- 指定していないパスにアクセスすると **404 ページが表示される**。
+- 本当に必要なページだけを静的生成したい場合に使用。
+
+---
+
+このまとめは、Next.js で Markdown ブログを構築する際に最低限知っておきたい基本構文とその意味を整理したものです。
+今後さらに `getStaticProps`, `getStaticPaths`, `Markdown → HTML変換` に発展していく際にも基盤になります。
+
+```
+
+---
+````
