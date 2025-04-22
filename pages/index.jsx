@@ -2,11 +2,11 @@ import Link from "next/link";
 import { Layout } from "../components/Layout";
 import utils from "../styles/utils.module.css";
 import styles from "../styles/Home.module.css";
-import { getPostData } from "@/lib/post";
+import { getPostsData } from "@/lib/post";
 
 // SSGの場合
 export async function getStaticProps() {
-  const allPostsData = getPostData();
+  const allPostsData = getPostsData();
   return {
     props: {
       allPostsData,
