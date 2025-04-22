@@ -19,5 +19,13 @@ export async function getStaticProps({ params }) {
 }
 
 export default function post({ postData }) {
-  return <Layout>{postData.title}</Layout>;
+  return (
+    <Layout>
+      {postData.title}
+      <br />
+      {postData.date}
+      <br />
+      {postData.blogContentHTML}
+    </Layout>
+  );
 }
