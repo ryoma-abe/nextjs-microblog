@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "./layout.module.css";
 import utils from "../styles/utils.module.css";
+import Link from "next/link";
 const name = "RyoCode";
 export const siteTitle = "Next Blog";
 
@@ -26,6 +27,11 @@ export const Layout = ({ children, home }) => {
         <h1 className={utils.heading2Xl}>{name}</h1>
       </header>
       <main>{children}</main>
+      {!home && (
+        <div>
+          <Link href="/">ホームに戻る</Link>
+        </div>
+      )}
     </div>
   );
 };
