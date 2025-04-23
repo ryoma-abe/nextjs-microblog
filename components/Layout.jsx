@@ -13,27 +13,17 @@ export const Layout = ({ children, home }) => {
         <link rel="icon" href="favicon.ico" type="image/x-icon" />
       </Head>
       <header className={styles.header}>
-        {home ? (
-          <>
-            <Image
-              className={`${utils.borderCircle} ${styles.headerHomeImage}`}
-              src="/images/profile.jpg"
-              width={100}
-              height={100}
-            />
-            <h1 className={utils.heading2Xl}>{name}</h1>
-          </>
-        ) : (
-          <>
-            <Image
-              className={utils.borderCircle}
-              src="/images/profile.jpg"
-              width={100}
-              height={100}
-            />
-            <h1 className={utils.heading2Xl}>{name}</h1>
-          </>
-        )}
+        <Image
+          className={
+            home
+              ? `${utils.borderCircle} ${styles.headerHomeImage}`
+              : utils.borderCircle
+          }
+          src="/images/profile.jpg"
+          width={100}
+          height={100}
+        />
+        <h1 className={utils.heading2Xl}>{name}</h1>
       </header>
       <main>{children}</main>
     </div>
