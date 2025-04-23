@@ -93,3 +93,5 @@ export async function getStaticPaths() {
 
 ---
 ````
+
+fallback→ 準備されたページ以外の制御
