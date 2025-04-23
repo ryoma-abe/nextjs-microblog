@@ -1,12 +1,7 @@
 ---
-
-````md
----
-
 title: "Next.js で学んだ静的ブログ構築の基礎知識まとめ"
 date: "2025-04-23"
 tags: ["Next.js", "ブログ", "Markdown", "SSG"]
-
 ---
 
 ## \_app.js と Link の注意点
