@@ -25,7 +25,6 @@ export const Layout = ({ children, home }) => {
           </>
         ) : (
           <>
-            {" "}
             <Image
               className={utils.borderCircle}
               src="/images/profile.jpg"
